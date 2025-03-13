@@ -2,55 +2,57 @@ import streamlit as st
 import google.generativeai as genai
 import os
 from dotenv import load_dotenv
+import streamlit.components.v1 as com
 
 # Load environment variables from .env
 load_dotenv()
 
-# Get the API key from the environment
-api_key = os.getenv("GEMINI_API_KEY")
 
-# Configure Gemini API Key securely
-genai.configure(api_key=api_key)
-# Function to generate quiz using Google Gemini
-def generate_quiz(text, difficulty):
-    try:
-        model = genai.GenerativeModel("gemini-2.0-flash")  # Updated to latest model
-        prompt = f"Create a {difficulty} level quiz based on this text:\n\n{text}"
-        response = model.generate_content([prompt])  # Corrected API input format
-        
-        # Ensure response is valid
-        if response and hasattr(response, "text"):
-            return response.text
-        else:
-            return "⚠️ No response from AI. Try again."
+# to hide the side bar 
+st.markdown(
+    """
+    <style>
+        [data-testid="stSidebar"] {display: none;}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 
-    except Exception as e:
-        return f"❌ Error: {str(e)}"
 
-# Streamlit UI Configuration
-st.set_page_config(page_title="AI Quiz Generator", page_icon="📝", layout="centered")
 
-# Header Section
-st.title("📝 AI Quiz Generator")
-st.write("Generate quizzes from any text using **Google Gemini AI**.")
 
-# Text input area
-text_input = st.text_area("📜 Enter your text here:", height=200, help="Paste any topic or passage to generate a quiz.")
 
-# Difficulty selection
-difficulty = st.selectbox("🎯 Select Quiz Difficulty:", ["Easy", "Medium", "Hard"])
 
-# Generate Quiz Button
-if st.button("🚀 Generate Quiz"):
-    if text_input.strip():
-        with st.spinner("⏳ Generating quiz... Please wait."):
-            quiz = generate_quiz(text_input, difficulty)
-            st.subheader("🎓 Generated Quiz:")
-            st.write(quiz)
-    else:
-        st.warning("⚠️ Please enter some text before generating.")
+# Load custom CSS
+with open("design.css") as source_des:
+    st.markdown(f"<style>{source_des.read()}</style>", unsafe_allow_html=True)
 
-# Footer
-st.write("💡 Powered by **Google Gemini AI** | Developed with ❤️ using Streamlit")
+
+# the style I will be using
+
+# Custom Hero Section
+# st.markdown(
+#     """
+#     <div style="text-align: center; padding: 50px; background-color: #FFF5E1; border-radius: 10px;">
+#         <h1 style="color: #E44D26; font-size: 48px; font-weight: bold;">Making a Presentation?</h1>
+#         <h2 style="color: #F79F1F; font-size: 36px;">Just <b>Slide it In</b></h2>
+#         <p style="color: #333; font-size: 18px;">Upload your documents and instantly get beautiful, presentation-ready slides in under 3 minutes.</p>
+#         <button style="background-color: #FF9800; color: white; padding: 15px 30px; font-size: 20px; border: none; border-radius: 5px; cursor: pointer;">Upload Documents</button>
+#     </div>
+#     """,
+#     unsafe_allow_html=True
+# )
+
+# Keep the existing quiz generator functionality
+
+com.iframe("https://lottie.host/embed/06d984cf-78a0-40f0-a5ec-4955a96d1383/PLUuEx0KXG.lottie")
+st.title("Quiz Generator")
+
+
+
+
+
+st.write("Make your learning more engaging and start Generating quizzes from any text using **Google Gemini AI**.")
+st.page_link("pages/quiz_displaying_page.py", label="Start Now", icon="🚀")
 
 
