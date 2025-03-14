@@ -60,12 +60,7 @@ h1{
     color: azure;
 
 }
-/* .st-emotion-cache-1104ytp p, .st-emotion-cache-1104ytp ol, .st-emotion-cache-1104ytp ul, .st-emotion-cache-1104ytp dl, .st-emotion-cache-1104ytp li {
-    font: size 100px !important} */
-/* .st-emotion-cache-b95f0i{
-    height:fit-content;
 
-} */
 .st-emotion-cache-1104ytp p {
     word-break: break-word;
     margin-top: 0px;
@@ -73,7 +68,6 @@ h1{
     margin-right: 0px;
     font-size:xx-large;
 }
-
 
 /* for the start now paragraph */
 .st-emotion-cache-1hyd1ho p, .st-emotion-cache-1hyd1ho ol, .st-emotion-cache-1hyd1ho ul, .st-emotion-cache-1hyd1ho dl, .st-emotion-cache-1hyd1ho li {
@@ -92,7 +86,8 @@ h1{
 
 /* General Styling */
 div.st-emotion-cache-mtjnbi {
-    background: linear-gradient(to right, #f6d365, #fda085);
+    background: linear-gradient(to right, #fbe3a3, #ffb58c);
+
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -121,8 +116,9 @@ textarea:hover, select:hover {
 
 /* Styling the Button */
 .st-emotion-cache-1hyd1ho p, .st-emotion-cache-1hyd1ho ol, .st-emotion-cache-1hyd1ho ul, .st-emotion-cache-1hyd1ho dl, .st-emotion-cache-1hyd1ho li {
-    background: #ff4757;
-    color: white;
+    background: #f4a1a8;
+
+    color: black;
     padding: 12px 24px;
     font-size: 18px;
     font-weight: bold;
@@ -157,10 +153,6 @@ h1, h2 {
 [data-testid="stSidebar"] {
     display: none;
 }
-
-
-
-  
 
 /* Style the actual textarea */
  .stTextArea textarea {
