@@ -3,6 +3,20 @@
 ### 🏆 Built with Gemini API & Streamlit
 
 🚀 **AI-Powered Quiz Generator** is an interactive web application that generates quizzes from any text using the **Gemini API**. Built with **Streamlit**, it allows users to input text, generate quiz questions, and evaluate their responses instantly. 
+![Image](https://github.com/user-attachments/assets/35c9d01e-9762-43b4-bf24-d213814e18da)
+The Front page 
+
+
+![Image](https://github.com/user-attachments/assets/4cb436fa-ae0d-4b41-b91d-d2b9eb0936c7)
+Enter a text in the above section 
+
+
+![Image](https://github.com/user-attachments/assets/b90a8912-075e-4638-8af5-f08b6d40b6b2)
+The Generated Quiz 
+
+
+![Image](https://github.com/user-attachments/assets/92c9804e-f094-4b10-ae86-cfd7dac7fb30)
+The Result of the  answers you submitted 
 
 ---
 
